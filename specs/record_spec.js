@@ -23,4 +23,6 @@ describe('Record', function() {
   it('should have an price', function() {
     assert.strictEqual(record.price, 15);
   });
+
+  it('should have amethod that returns it\'s properties as a string');
 });

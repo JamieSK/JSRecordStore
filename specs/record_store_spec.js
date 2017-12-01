@@ -31,4 +31,12 @@ describe('Record Store', function() {
     recordStore.add(record);
     assert.deepStrictEqual(recordStore.inventory, [record]);
   });
+
+  it('should have a method to list it\'s inventory');
+
+  it('should be able to sell a record');
+
+  it('should be able report finances, showing balance and value of inventory');
+
+  it('should be able to view records by genre');
 });
