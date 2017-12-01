@@ -15,6 +15,9 @@ describe('Record', function() {
   it('should have a title', function() {
     assert.strictEqual(record.title, 'Jumping the Shark');
   });
-  it('should have a genre');
+
+  it('should have a genre', function() {
+    assert.strictEqual(record.genre, 'Alt-Rock');
+  });
   it('should have an price');
 });
