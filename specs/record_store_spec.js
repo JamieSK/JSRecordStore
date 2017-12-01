@@ -4,6 +4,10 @@ let RecordStore = require('../source/record_store');
 describe('Record Store', function() {
   let recordStore;
 
+  beforeEach(function() {
+    recordStore = new RecordStore('Big Al\'s', 'Glasgow');
+  });
+
   it('should have a name');
   it('should have a city');
   it('should have an inventory');
