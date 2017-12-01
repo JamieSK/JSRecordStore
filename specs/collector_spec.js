@@ -1,8 +1,16 @@
 let assert = require('assert');
-let RecordStore = require('../source/record_store');
+let Collector = require('../source/collector');
 let Record = require('../source/record');
 
 describe('Record Collector', function() {
+  let collector;
+  let record;
+
+  beforeEach(function() {
+    collector = new Collector(100);
+    record = new Record('Alex Cameron', 'Jumping the Shark', 'Alt-Rock', 15);
+  });
+
   it('should have cash');
   it('should be able to buy records');
   it('shouldn\'t be able to buy records they can\'t afford');
