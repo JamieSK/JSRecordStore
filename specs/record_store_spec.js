@@ -38,7 +38,12 @@ describe('Record Store', function() {
     assert.strictEqual(recordStore.listInventory(), expected);
   });
 
-  it('should be able to sell a record');
+  it('should be able to sell a record', function() {
+    recordStore.add(record);
+    assert.strictEqual(recordStore.sell(record), record);
+    assert.strictEqual(recordStore.balance, 15);
+    assert.deepStrictEqual(recordStore.inventory, []);
+  });
 
   it('should be able report finances, showing balance and value of inventory');
 
