@@ -14,7 +14,13 @@ describe('Record Collector', function() {
   it('should have cash', function() {
     assert.strictEqual(collector.cash, 100);
   });
-  it('should be able to buy records');
+
+  it('should be able to buy records', function() {
+    collector.buy(record);
+    assert.deepStrictEqual(collector.records, [record]);
+    assert.strictEqual(collector.cash, 85);
+  });
+
   it('shouldn\'t be able to buy records they can\'t afford');
   it('should be able to sell records');
   it('should be able to get total records value');
