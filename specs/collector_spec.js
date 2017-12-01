@@ -70,5 +70,18 @@ describe('Record Collector', function() {
     let expected = [expensiveRecord, record];
     assert.deepStrictEqual(collector.descendingRecords(), expected);
   });
-  it('should be able to compare the value of their record collection');
+
+  it('should be able to compare the value of their record collection',
+    function() {
+      let richCollector = new Collector(2000);
+      richCollector.buy(expensiveRecord);
+      richCollector.buy(expensiveRecord);
+      richCollector.buy(expensiveRecord);
+      collector.buy(record);
+
+      assert.strictEqual(collector.compareWith(richCollector), -1);
+      assert.strictEqual(richCollector.compareWith(richCollector), 0);
+      assert.strictEqual(richCollector.compareWith(collector), 1);
+    }
+  );
 });

@@ -41,7 +41,17 @@ Collector.prototype = {
 
   descendingRecords: function() {
     return this.ascendingRecords().reverse();
-  }
+  },
+
+  compareWith: function(otherCollector) {
+    if (this.recordsValue() > otherCollector.recordsValue()) {
+      return 1;
+    } else if (this.recordsValue() < otherCollector.recordsValue()) {
+      return -1;
+    } else {
+      return 0;
+    }
+  },
 };
 
 module.exports = Collector;
