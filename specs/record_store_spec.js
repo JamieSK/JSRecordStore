@@ -56,5 +56,10 @@ describe('Record Store', function() {
     }
   );
 
-  it('should be able to view records by genre');
+  it('should be able to view records by genre', function() {
+    recordStore.add(record);
+
+    assert.deepStrictEqual(recordStore.recordsByGenre('Alt-Rock'), [record]);
+    assert.deepStrictEqual(recordStore.recordsByGenre('Pop'), []);
+  });
 });

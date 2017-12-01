@@ -1,4 +1,5 @@
 const sumBy = require('lodash/sumBy');
+const filter = require('lodash/filter');
 
 const RecordStore = function(name, city) {
   this.name = name;
@@ -33,7 +34,11 @@ RecordStore.prototype = {
 
   finances: function() {
     return `Balance: £${this.balance},\nStock value: £${this.stockValue()}`;
-  }
+  },
+
+  recordsByGenre: function(genre) {
+    return filter(this.inventory, {'genre': genre});
+  },
 };
 
 module.exports = RecordStore;
