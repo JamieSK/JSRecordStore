@@ -11,7 +11,9 @@ describe('Record Collector', function() {
     record = new Record('Alex Cameron', 'Jumping the Shark', 'Alt-Rock', 15);
   });
 
-  it('should have cash');
+  it('should have cash', function() {
+    assert.strictEqual(collector.cash, 100);
+  });
   it('should be able to buy records');
   it('shouldn\'t be able to buy records they can\'t afford');
   it('should be able to sell records');
