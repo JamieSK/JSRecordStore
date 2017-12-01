@@ -62,7 +62,13 @@ describe('Record Collector', function() {
     let expected = [record, expensiveRecord];
     assert.deepStrictEqual(collector.ascendingRecords(), expected);
   });
-  
-  it('should be able to sort their records descending');
+
+  it('should be able to sort their records descending', function() {
+    collector.buy(record);
+    collector.buy(expensiveRecord);
+
+    let expected = [expensiveRecord, record];
+    assert.deepStrictEqual(collector.descendingRecords(), expected);
+  });
   it('should be able to compare the value of their record collection');
 });

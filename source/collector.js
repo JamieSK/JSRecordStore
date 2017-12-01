@@ -38,6 +38,10 @@ Collector.prototype = {
   ascendingRecords: function() {
     return sortBy(this.records, 'price');
   },
+
+  descendingRecords: function() {
+    return this.ascendingRecords().reverse();
+  }
 };
 
 module.exports = Collector;
