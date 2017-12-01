@@ -5,10 +5,12 @@ let Record = require('../source/record');
 describe('Record Collector', function() {
   let collector;
   let record;
+  let expensiveRecord;
 
   beforeEach(function() {
     collector = new Collector(100);
     record = new Record('Alex Cameron', 'Jumping the Shark', 'Alt-Rock', 15);
+    expensiveRecord = new Record('Metallica', 'Master of Puppets', 'Rock', 50);
   });
 
   it('should have cash', function() {
@@ -47,7 +49,12 @@ describe('Record Collector', function() {
     assert.strictEqual(collector.recordsValueGenre('Pop'), 0);
   });
 
-  it('should be able to their most valuable record');
+  it('should be able to their most valuable record', function() {
+    collector.buy(record);
+    collector.buy(expensiveRecord);
+    assert.strictEqual(collector.valuableRecord(), expensiveRecord);
+  });
+
   it('should be able to sort their records ascending');
   it('should be able to sort their records descending');
   it('should be able to compare the value of their record collection');
