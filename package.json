@@ -1,0 +1,19 @@
+{
+  "name": "js_record_store",
+  "version": "1.0.0",
+  "description": "A record store TDD in JS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JamieSK/JSRecordStore.git"
+  },
+  "author": "Jamie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamieSK/JSRecordStore/issues"
+  },
+  "homepage": "https://github.com/JamieSK/JSRecordStore#readme"
+}
