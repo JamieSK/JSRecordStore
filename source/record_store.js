@@ -1,5 +1,5 @@
-const RecordStore = function() {
-
+const RecordStore = function(name) {
+  this.name = name;
 };
 
 module.exports = RecordStore;

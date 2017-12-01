@@ -8,7 +8,9 @@ describe('Record Store', function() {
     recordStore = new RecordStore('Big Al\'s', 'Glasgow');
   });
 
-  it('should have a name');
+  it('should have a name', function() {
+    assert.strictEqual(recordStore.name, 'Big Al\'s');
+  });
   it('should have a city');
   it('should have an inventory');
   it('should have a balance');
