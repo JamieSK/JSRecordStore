@@ -23,4 +23,10 @@ describe('Record', function() {
   it('should have an price', function() {
     assert.strictEqual(record.price, 15);
   });
+
+  it('should have a method that returns it\'s properties as a string',
+  function() {
+    let expected = 'Jumping the Shark by Alex Cameron, Alt-Rock, £15';
+    assert.strictEqual(record.details(), expected);
+  });
 });

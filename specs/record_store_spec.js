@@ -31,4 +31,35 @@ describe('Record Store', function() {
     recordStore.add(record);
     assert.deepStrictEqual(recordStore.inventory, [record]);
   });
+
+  it('should have a method to list it\'s inventory', function() {
+    let expected = '1: Jumping the Shark by Alex Cameron, Alt-Rock, £15\n';
+    recordStore.add(record);
+    assert.strictEqual(recordStore.listInventory(), expected);
+  });
+
+  it('should be able to sell a record', function() {
+    recordStore.add(record);
+    assert.strictEqual(recordStore.sell(record), record);
+    assert.strictEqual(recordStore.balance, 15);
+    assert.deepStrictEqual(recordStore.inventory, []);
+  });
+
+  it('should be able report finances, showing balance and value of inventory',
+    function() {
+      recordStore.add(record);
+      recordStore.sell(record);
+
+      let expected = 'Balance: £15,\nStock value: £0';
+
+      assert.strictEqual(recordStore.finances(), expected);
+    }
+  );
+
+  it('should be able to view records by genre', function() {
+    recordStore.add(record);
+
+    assert.deepStrictEqual(recordStore.recordsByGenre('Alt-Rock'), [record]);
+    assert.deepStrictEqual(recordStore.recordsByGenre('Pop'), []);
+  });
 });
