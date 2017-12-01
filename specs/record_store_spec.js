@@ -32,7 +32,11 @@ describe('Record Store', function() {
     assert.deepStrictEqual(recordStore.inventory, [record]);
   });
 
-  it('should have a method to list it\'s inventory');
+  it('should have a method to list it\'s inventory', function() {
+    let expected = '1: Jumping the Shark by Alex Cameron, Alt-Rock, £15\n';
+    recordStore.add(record);
+    assert.strictEqual(recordStore.listInventory(), expected);
+  });
 
   it('should be able to sell a record');
 
