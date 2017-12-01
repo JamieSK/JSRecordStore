@@ -41,7 +41,12 @@ describe('Record Collector', function() {
     assert.strictEqual(collector.recordsValue(), 30);
   });
 
-  it('should be able to get total records value of a genre');
+  it('should be able to get total records value of a genre', function() {
+    collector.buy(record);
+    assert.strictEqual(collector.recordsValueGenre('Alt-Rock'), 15);
+    assert.strictEqual(collector.recordsValueGenre('Pop'), 0);
+  });
+
   it('should be able to their most valuable record');
   it('should be able to sort their records ascending');
   it('should be able to sort their records descending');

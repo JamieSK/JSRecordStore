@@ -1,4 +1,5 @@
 const sumBy = require('lodash/sumBy');
+const filter = require('lodash/filter');
 
 const Collector = function(cash) {
   this.cash = cash;
@@ -22,6 +23,10 @@ Collector.prototype = {
 
   recordsValue: function() {
     return sumBy(this.records, 'price');
+  },
+
+  recordsValueGenre: function(genre) {
+    return sumBy(filter(this.records, {'genre': genre}), 'price');
   },
 };
 
