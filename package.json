@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/JamieSK/JSRecordStore/issues"
   },
-  "homepage": "https://github.com/JamieSK/JSRecordStore#readme"
+  "homepage": "https://github.com/JamieSK/JSRecordStore#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
 }
