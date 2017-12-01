@@ -15,6 +15,12 @@ describe('Record Store', function() {
   it('should have a city', function() {
     assert.strictEqual(recordStore.city, 'Glasgow');
   });
-  it('should have an inventory');
-  it('should have a balance');
+
+  it('should have an inventory', function() {
+    assert.deepStrictEqual(recordStore.inventory, []);
+  });
+
+  it('should have a balance', function() {
+    assert.strictEqual(recordStore.balance, 0);
+  });
 });
