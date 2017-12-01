@@ -8,7 +8,10 @@ describe('Record', function() {
     record = new Record('Alex Cameron', 'Jumping the Shark', 'Alt-Rock', 15);
   });
 
-  it('should have an artist');
+  it('should have an artist', function() {
+    assert.strictEqual(record.artist, 'Alex Cameron');
+  });
+
   it('should have a title');
   it('should have a genre');
   it('should have an price');

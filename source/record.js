@@ -1,5 +1,5 @@
-const Record = function() {
-
+const Record = function(artist) {
+  this.artist = artist;
 };
 
 module.exports = Record;
