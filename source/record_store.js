@@ -1,3 +1,5 @@
+const sumBy = require('lodash/sumBy');
+
 const RecordStore = function(name, city) {
   this.name = name;
   this.city = city;
@@ -24,6 +26,14 @@ RecordStore.prototype = {
     this.balance += sold.price;
     return sold;
   },
+
+  stockValue: function() {
+    return sumBy(this.inventory, 'price');
+  },
+
+  finances: function() {
+    return `Balance: £${this.balance},\nStock value: £${this.stockValue()}`;
+  }
 };
 
 module.exports = RecordStore;

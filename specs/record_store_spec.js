@@ -45,7 +45,16 @@ describe('Record Store', function() {
     assert.deepStrictEqual(recordStore.inventory, []);
   });
 
-  it('should be able report finances, showing balance and value of inventory');
+  it('should be able report finances, showing balance and value of inventory',
+    function() {
+      recordStore.add(record);
+      recordStore.sell(record);
+
+      let expected = 'Balance: £15,\nStock value: £0';
+
+      assert.strictEqual(recordStore.finances(), expected);
+    }
+  );
 
   it('should be able to view records by genre');
 });
