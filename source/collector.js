@@ -1,3 +1,5 @@
+const sumBy = require('lodash/sumBy');
+
 const Collector = function(cash) {
   this.cash = cash;
   this.records = [];
@@ -16,6 +18,10 @@ Collector.prototype = {
     let sold = this.records.splice(index, 1)[0];
     this.cash += sold.price;
     return sold;
+  },
+
+  recordsValue: function() {
+    return sumBy(this.records, 'price');
   },
 };
 
