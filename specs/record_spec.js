@@ -12,7 +12,9 @@ describe('Record', function() {
     assert.strictEqual(record.artist, 'Alex Cameron');
   });
 
-  it('should have a title');
+  it('should have a title', function() {
+    assert.strictEqual(record.title, 'Jumping the Shark');
+  });
   it('should have a genre');
   it('should have an price');
 });
