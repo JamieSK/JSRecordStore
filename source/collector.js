@@ -10,6 +10,13 @@ Collector.prototype = {
       this.cash -= record.price;
     }
   },
+
+  sell: function(record) {
+    let index = this.records.indexOf(record);
+    let sold = this.records.splice(index, 1)[0];
+    this.cash += sold.price;
+    return sold;
+  },
 };
 
 module.exports = Collector;
